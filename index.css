@@ -57,7 +57,7 @@ html, body {
     width: 50%;
     font-size: 2.8vh;
     color: white;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     text-align: left;
     font-weight: bold;
 }
@@ -65,7 +65,7 @@ html, body {
     width: 50%;
     font-size: 1.5vh;
     color: white;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     font-weight: lighter;
     margin-top: 5%;
     text-align: right;
@@ -357,17 +357,76 @@ html, body {
     transition: all 0.2s linear;
 }
 .menu{
-    width: 3vh;
-    height: 3vh;
-    border-radius: 3vh;
-    border: solid #A9A9A9 1px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    margin-top: 10%;
+    width: 100%;
+    flex-direction: column;
 }
-.menu_icon{
-    width: 2vh;
-    height: 2vh;
+.menu_button {
+    width: 7vh;
+    height: 7vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(44, 44, 44);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+    border: none;
+}
 
+.bell {
+    width: 18px;
 }
+
+.bell path {
+    fill: white;
+}
+
+.menu_button:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+.menu_button:hover .bell {
+    animation: bellRing 0.9s both;
+}
+
+/* bell ringing animation keyframes*/
+@keyframes bellRing {
+    0%,
+    100% {
+        transform-origin: top;
+    }
+
+    15% {
+        transform: rotateZ(10deg);
+    }
+
+    30% {
+        transform: rotateZ(-10deg);
+    }
+
+    45% {
+        transform: rotateZ(5deg);
+    }
+
+    60% {
+        transform: rotateZ(-5deg);
+    }
+
+    75% {
+        transform: rotateZ(2deg);
+    }
+}
+
+.menu_button:active {
+    transform: scale(0.8);
+}
+
 @keyframes rotBGimg {
     from {
         transform: rotate(0deg);
